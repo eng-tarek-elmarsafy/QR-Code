@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code/Core/utils/colors.dart';
 
 import 'widget/onbording2_body.dart';
 
@@ -9,6 +10,7 @@ class Onbording2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.kGoldenSun,
       body: const Onbording2Body(),
     );
   }

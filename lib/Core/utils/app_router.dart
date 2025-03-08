@@ -7,6 +7,7 @@ import '../../Feature/History/presentation/views/history_view.dart';
 import '../../Feature/Home/presentation/views/home_view.dart';
 import '../../Feature/Open_File/presentation/views/open_file_view.dart';
 import '../../Feature/Settings/presentation/views/setting_view.dart';
+import '../../Feature/Splash/presentation/views/onbording3.dart';
 import '../../Feature/Splash/presentation/views/splash_view.dart';
 
 class AppRouter {
@@ -23,6 +24,10 @@ class AppRouter {
       GoRoute(
         path: Onbording2.id,
         builder: (context, state) => const Onbording2(),
+      ),
+      GoRoute(
+        path: Onbording3.id,
+        builder: (context, state) => const Onbording3(),
       ),
       GoRoute(
         path: HomeView.id,
