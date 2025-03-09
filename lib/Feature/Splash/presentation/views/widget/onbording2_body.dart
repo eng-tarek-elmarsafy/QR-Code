@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qr_code/Core/utils/assets.dart';
@@ -18,20 +17,21 @@ class Onbording2Body extends StatelessWidget {
           AppAssets.intersect2T,
           width: MediaQuery.of(context).size.width,
         ),
-        Spacer(),
+        const Spacer(),
         SvgPicture.asset(
           AppAssets.splashLogo,
         ),
-        Spacer(
+        const Spacer(
           flex: 3,
         ),
-        OnbordingText(),
-        Spacer(),
+        const OnbordingText(),
+        const Spacer(),
         CustomStackOnbording(
           image: AppAssets.intersect2B,
           onPressed: () {
             GoRouter.of(context).push(Onbording3.id);
-          }, top: .111,
+          },
+          top: .111,
         ),
       ],
     );
@@ -43,7 +43,10 @@ class CustomStackOnbording extends StatelessWidget {
   final VoidCallback onPressed;
   final double top;
   const CustomStackOnbording(
-      {super.key, required this.image, required this.onPressed, required this.top});
+      {super.key,
+      required this.image,
+      required this.onPressed,
+      required this.top});
 
   @override
   Widget build(BuildContext context) {

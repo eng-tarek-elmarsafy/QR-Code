@@ -8,7 +8,7 @@ class OnbordingText extends StatelessWidget {
     // Figma Flutter Generator GetstartedWidget - TEXT
     return Column(
       children: [
-        Text(
+       const Text(
           'Get Started',
           textAlign: TextAlign.center,
           style: TextStyle(
@@ -20,11 +20,11 @@ class OnbordingText extends StatelessWidget {
               fontWeight: FontWeight.normal,
               height: 1),
         ),
-        SizedBox(
+      const  SizedBox(
           height: 15,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+      const  Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 50),
           child: Text(
             'Go and enjoy our features for free and make your life easy with us.',
             textAlign: TextAlign.center,
