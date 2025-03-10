@@ -13,13 +13,13 @@ class Flash extends StatelessWidget {
         if (state is FlashOn) {
           return const Icon(
             Icons.flash_on,
-            size: 50,
+            size: 40,
             color: Colors.white,
           );
         } else {
           return const Icon(
             Icons.flash_off,
-            size: 50,
+            size: 40,
             color: Colors.white,
           );
         }
