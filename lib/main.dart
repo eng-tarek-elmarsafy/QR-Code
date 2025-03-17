@@ -11,8 +11,12 @@ class QrCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
     );
+    // return MaterialApp(
+    //   home: QRCodeScreen(),
+    // );
   }
 }
