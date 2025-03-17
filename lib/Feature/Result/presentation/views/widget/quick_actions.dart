@@ -19,22 +19,9 @@ class QuickActions extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        QrCodeAchtion(icon: icon1, onTap: onTap1
-
-            //  () {
-            //   Share.share(qrInfo.url!);
-            // },
-            ),
+        QrCodeAchtion(icon: icon1, onTap: onTap1),
         SizedBox(width: 40),
-        QrCodeAchtion(
-          icon: icon2,
-
-          // Icons.copy_rounded,
-          onTap: onTap2,
-          // () {
-          //   Clipboard.setData(ClipboardData(text: qrInfo.url!));
-          // },
-        ),
+        QrCodeAchtion(icon: icon2, onTap: onTap2),
       ],
     );
   }

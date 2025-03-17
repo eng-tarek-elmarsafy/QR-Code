@@ -14,16 +14,16 @@ class ShowQrBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        BackgroundApp(),
+        const BackgroundApp(),
         SafeArea(
           child: Column(
             children: [
               const ResultBar(text: 'QR Code'),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               CardQRInfoShow(qrInfo: qrInfo),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               BoxQrCode(qrInfo: qrInfo),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               QuickActions(
                   icon1: Icons.share,
                   icon2: Icons.save,

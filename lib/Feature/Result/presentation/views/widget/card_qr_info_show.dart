@@ -15,8 +15,8 @@ class CardQRInfoShow extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 35, 35, 35),
+            const BoxShadow(
+              color: Color.fromARGB(255, 35, 35, 35),
               offset: Offset(4, 4),
               blurRadius: 4,
               spreadRadius: -1,
@@ -33,10 +33,8 @@ class CardQRInfoShow extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'Data',
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -62,7 +60,7 @@ class CardQRInfoShow extends StatelessWidget {
                   child: Text(
                     qrInfo.url!,
                     textAlign: TextAlign.justify,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color.fromRGBO(217, 217, 217, 1),
                       fontFamily: 'Itim',
                       fontSize: 13,
@@ -72,7 +70,7 @@ class CardQRInfoShow extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
               ],

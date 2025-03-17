@@ -10,6 +10,6 @@ class GenerateQrCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return QrImageView(data: data);
+    return  QrImageView(data: data);
   }
 }
