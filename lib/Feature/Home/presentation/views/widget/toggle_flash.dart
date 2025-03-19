@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:qr_code/Feature/Home/presentation/manager/camera_controller_cubit/camera_controller_cubit.dart';
 
 class ToggleFlash extends StatelessWidget {
-  final MobileScannerController controller;
   const ToggleFlash({
     super.key,
-    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<CameraControllerCubit>();
     return GestureDetector(
       onTap: () {
-        controller.toggleTorch();
+        controller.toggleFlash();
       },
       child: ValueListenableBuilder(
-        valueListenable: controller.torchState,
+        valueListenable: controller.controller.torchState,
         builder: (context, state, child) {
           if (state == TorchState.off) {
             return Icon(

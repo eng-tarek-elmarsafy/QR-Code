@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import '../../manager/camera_controller_cubit/camera_controller_cubit.dart';
 
 class ImageFromGallery extends StatelessWidget {
   const ImageFromGallery({
     super.key,
-    required this.controller,
   });
-
-  final MobileScannerController controller;
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<CameraControllerCubit>();
     return IconButton(
       onPressed: () async {
-        await pickImage();
+        await pickImage(controller);
       },
       icon: const Icon(
         Icons.image,
-        size: 40,
+        size: 30,
         color: Colors.white,
       ),
     );
   }
 
-  Future<void> pickImage() async {
+  Future<void> pickImage(CameraControllerCubit controller) async {
     final ImagePicker picker = ImagePicker();
-    final XFile? image =
-        await picker.pickImage(source: ImageSource.gallery);
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     if (image != null) {
-      controller.analyzeImage(image.path);
+      controller.analyzeImageGallery(image.path);
     }
   }
 }

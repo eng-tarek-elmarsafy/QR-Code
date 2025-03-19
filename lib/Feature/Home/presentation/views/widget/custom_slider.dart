@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qr_code/Feature/Home/presentation/manager/camera_controller_cubit/camera_controller_cubit.dart';
 import '../../../../../Core/utils/colors.dart';
 
 class CustomSlider extends StatefulWidget {
-  final MobileScannerController controller;
   const CustomSlider({
     super.key,
-    required this.controller,
   });
 
   @override
@@ -17,6 +16,7 @@ class _CustomSliderState extends State<CustomSlider> {
   double zoom = 0.0;
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<CameraControllerCubit>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -25,7 +25,7 @@ class _CustomSliderState extends State<CustomSlider> {
             if (zoom >= 0.11) {
               setState(() {
                 zoom -= .11;
-                widget.controller.setZoomScale(zoom);
+                controller.cameraZoom(zoom);
               });
             }
           },
@@ -43,7 +43,7 @@ class _CustomSliderState extends State<CustomSlider> {
             value: zoom,
             onChanged: (value) {
               zoom = value;
-              widget.controller.setZoomScale(zoom);
+              controller.cameraZoom(zoom);
               setState(() {});
             },
           ),
@@ -53,7 +53,7 @@ class _CustomSliderState extends State<CustomSlider> {
             if (zoom <= .9) {
               setState(() {
                 zoom += .11;
-                widget.controller.setZoomScale(zoom);
+                controller.cameraZoom(zoom);
               });
             }
           },

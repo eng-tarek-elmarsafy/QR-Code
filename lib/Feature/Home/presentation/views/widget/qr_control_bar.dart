@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:qr_code/Core/utils/assets.dart';
+import 'package:qr_code/Feature/Home/presentation/manager/camera_controller_cubit/camera_controller_cubit.dart';
 import 'generate_and_history.dart';
 
 class QRControlBar extends StatelessWidget {
-  final MobileScannerController controller;
-  const QRControlBar({super.key, required this.controller});
+  const QRControlBar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<CameraControllerCubit>();
     bool isActive = true;
     return Stack(
       alignment: Alignment.topCenter,
@@ -21,10 +24,10 @@ class QRControlBar extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               if (isActive) {
-                controller.stop();
+                controller.cameraStop();
                 isActive = !isActive;
               } else {
-                controller.start();
+                controller.cameraStart();
                 isActive = !isActive;
               }
             },

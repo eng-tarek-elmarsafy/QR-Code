@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qr_code/Feature/Home/presentation/manager/camera_controller_cubit/camera_controller_cubit.dart';
 
 class SwitchCamera extends StatelessWidget {
   const SwitchCamera({
     super.key,
-    required this.controller,
   });
-
-  final MobileScannerController controller;
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<CameraControllerCubit>();
     return IconButton(
       onPressed: () {
-        controller.switchCamera();
+        controller.camreaSwitch();
       },
       icon: const Icon(
         Icons.flip_camera_ios_outlined,
-        size: 40,
+        size: 30,
         color: Colors.white,
       ),
     );
