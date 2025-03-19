@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:qr_code/Feature/Home/presentation/views/widget/switch_camera.dart';
 import '../../../../../Core/utils/colors.dart';
-import '../../manager/cubit/flash_cubit.dart';
+import 'image_from_gallery.dart';
 import 'toggle_flash.dart';
 
 class CameraControlBar extends StatelessWidget {
-  final MobileScannerController controller;
   const CameraControlBar({super.key, required this.controller});
+
+  final MobileScannerController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -15,37 +16,13 @@ class CameraControlBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6),
-            color: AppColor.kShadowBlack,
-          ),
+          decoration: _boxDecoration,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.image,
-                  size: 40,
-                  color: Colors.white,
-                ),
-              ),
-              BlocProvider(
-                create: (context) => FlashCubit(),
-                child: ToggleFlash(
-                  controller: controller,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  controller.switchCamera();
-                },
-                icon: const Icon(
-                  Icons.flip_camera_ios_outlined,
-                  size: 40,
-                  color: Colors.white,
-                ),
-              ),
+              ImageFromGallery(controller: controller),
+              ToggleFlash(controller: controller),
+              SwitchCamera(controller: controller),
             ],
           ),
         ),
@@ -53,3 +30,8 @@ class CameraControlBar extends StatelessWidget {
     );
   }
 }
+
+const BoxDecoration _boxDecoration = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(6)),
+  color: AppColor.kShadowBlack,
+);
