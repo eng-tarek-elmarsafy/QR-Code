@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../manager/cubit/flash_cubit.dart';
-import 'flash_toggle.dart';
+import 'toggle_flash.dart';
 
 class CameraControlBar extends StatelessWidget {
   final MobileScannerController controller;
@@ -32,7 +32,7 @@ class CameraControlBar extends StatelessWidget {
               ),
               BlocProvider(
                 create: (context) => FlashCubit(),
-                child: FlashToggle(
+                child: ToggleFlash(
                   controller: controller,
                 ),
               ),
