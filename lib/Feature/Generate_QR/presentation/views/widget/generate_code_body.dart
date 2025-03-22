@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GenerateCodeBody extends StatelessWidget {
-  const GenerateCodeBody({super.key});
+class GenerateQRBody extends StatelessWidget {
+  const GenerateQRBody({super.key});
 
   @override
   Widget build(BuildContext context) {

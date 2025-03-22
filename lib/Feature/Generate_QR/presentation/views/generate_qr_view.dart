@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code/Feature/Generate_Code/presentation/views/widget/generate_code_body.dart';
+
+import 'widget/generate_code_body.dart';
 
 class GenerateQRView extends StatelessWidget {
   static const String id = '/GenerateQRView';
@@ -8,7 +9,7 @@ class GenerateQRView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: GenerateCodeBody(),
+      body: GenerateQRBody(),
     );
   }
 }
