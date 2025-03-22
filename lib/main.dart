@@ -21,8 +21,5 @@ class QrCode extends StatelessWidget {
         routerConfig: AppRouter.router,
       ),
     );
-    // return MaterialApp(
-    //   home: QRCodeScreen(),
-    // );
   }
 }
