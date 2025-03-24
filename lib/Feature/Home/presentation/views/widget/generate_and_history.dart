@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../Core/utils/colors.dart';
 import 'custom_generate.dart';
 import 'custom_history.dart';
@@ -13,28 +12,28 @@ class GenerateAndHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(1.5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: AppColor.kGoldenSun,
-      ),
+      decoration: _boxDecoration,
       child: Container(
-        constraints: BoxConstraints(minHeight: 65),
+        constraints: const BoxConstraints(minHeight: 65),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: AppColor.kShadowBlack,
         ),
-        child: Row(
+        child: const Row(
           children: [
-            const Spacer(),
-            const CustomGenerate(),
-            const Spacer(
-              flex: 3,
-            ),
-            const CustomHistory(),
-            const Spacer(),
+            Spacer(),
+            CustomGenerate(),
+            Spacer(flex: 3),
+            CustomHistory(),
+            Spacer(),
           ],
         ),
       ),
     );
   }
 }
+
+const BoxDecoration _boxDecoration = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(30)),
+  color: AppColor.kGoldenSun,
+);

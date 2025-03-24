@@ -1,4 +1,16 @@
 import 'package:go_router/go_router.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_business.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_contact.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_email.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_event.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_instagram.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_location.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_telephone.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_text.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_twitter.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_website.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_whatsapp.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_wifi.dart';
 import 'package:qr_code/Feature/Home/data/models/qr_info.dart';
 import 'package:qr_code/Feature/Result/presentation/views/show_qr_view.dart';
 import 'package:qr_code/Feature/Splash/presentation/views/onbording1.dart';
@@ -57,6 +69,54 @@ class AppRouter {
         builder: (context, state) => ShowQrView(
           qrInfo: state.extra as QrInfo,
         ),
+      ),
+      GoRoute(
+        path: GenerateText.id,
+        builder: (context, state) => const GenerateText(),
+      ),
+      GoRoute(
+        path: GenerateWebsite.id,
+        builder: (context, state) => const GenerateWebsite(),
+      ),
+      GoRoute(
+        path: GenerateWiFi.id,
+        builder: (context, state) => const GenerateWiFi(),
+      ),
+      GoRoute(
+        path: GenerateEvent.id,
+        builder: (context, state) => const GenerateEvent(),
+      ),
+      GoRoute(
+        path: GenerateContact.id,
+        builder: (context, state) => const GenerateContact(),
+      ),
+      GoRoute(
+        path: GenerateBusiness.id,
+        builder: (context, state) => const GenerateBusiness(),
+      ),
+      GoRoute(
+        path: GenerateLocation.id,
+        builder: (context, state) => const GenerateLocation(),
+      ),
+      GoRoute(
+        path: GenerateWhatsapp.id,
+        builder: (context, state) => const GenerateWhatsapp(),
+      ),
+      GoRoute(
+        path: GenerateEmail.id,
+        builder: (context, state) => const GenerateEmail(),
+      ),
+      GoRoute(
+        path: GenerateTwitter.id,
+        builder: (context, state) => const GenerateTwitter(),
+      ),
+      GoRoute(
+        path: GenerateInstagram.id,
+        builder: (context, state) => const GenerateInstagram(),
+      ),
+      GoRoute(
+        path: GenerateTelephone.id,
+        builder: (context, state) => const GenerateTelephone(),
       ),
     ],
   );

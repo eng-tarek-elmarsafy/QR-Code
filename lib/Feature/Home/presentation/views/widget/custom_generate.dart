@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qr_code/Feature/Generate_QR/presentation/views/generate_qr_view.dart';
 
 class CustomGenerate extends StatelessWidget {
   const CustomGenerate({
@@ -8,7 +10,9 @@ class CustomGenerate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).go(GenerateQRView.id);
+      },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

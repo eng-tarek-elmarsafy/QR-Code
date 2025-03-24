@@ -1,4 +1,4 @@
-class AppAssets {
+class AppAssets { 
   static const String splashLogo = 'assets/svg/logo_splash_view.svg';
   static const String buttonSheetLogo = 'assets/svg/logo_show_bottom_sheet.svg';
   static const String intersect1T = 'assets/svg/intersect1t.svg';
