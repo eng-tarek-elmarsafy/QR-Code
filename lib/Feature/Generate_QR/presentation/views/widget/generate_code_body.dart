@@ -28,3 +28,4 @@ class GenerateQRBody extends StatelessWidget {
     );
   }
 }
+

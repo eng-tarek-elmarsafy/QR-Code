@@ -21,4 +21,5 @@ class AppAssets {
   static const String generateWebsite = 'assets/svg/generate_website.svg';
   static const String generateWhatsapp = 'assets/svg/generate_whatsapp.svg';
   static const String generateWiFi = 'assets/svg/generate_wi-fi.svg';
+  static const String textLogo = 'assets/svg/generate_text_logo.svg';
 }

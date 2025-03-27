@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget/generate_text_body.dart';
 
 class GenerateText extends StatelessWidget {
   static const String id = '/GenerateText';
@@ -6,6 +7,8 @@ class GenerateText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: GenerateTextBody(),
+    );
   }
 }
